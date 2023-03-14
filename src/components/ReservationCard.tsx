@@ -14,7 +14,7 @@ export default function ReservationCard({ name, index }: Props) {
     <div
       onClick={() => {
         dispatch(removeReservation(index));
-        dispatch(addCustomer(name));
+        dispatch(addCustomer({ id: Date.now(), name, food: [] }));
       }}
       className="reservation-card-container"
     >

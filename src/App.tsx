@@ -5,6 +5,7 @@ import { RootState } from "./app/store";
 import ReservationCard from "./components/ReservationCard";
 import { addReservation } from "./features/reservationSlice";
 import CustomerCard from "./components/CustomerCard";
+import { isTemplateMiddle } from "typescript";
 
 function App() {
   const [reservationNameInput, setReservationNameInput] = useState<string>("");
@@ -43,7 +44,7 @@ function App() {
         </div>
         <div className="customer-food-container">
           {customers.map((item, idx) => (
-            <CustomerCard name={item} />
+            <CustomerCard key={idx} id={item.id} food={item.food} name={item.name} />
           ))}
         </div>
       </div>
